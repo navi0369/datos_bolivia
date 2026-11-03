@@ -1,4 +1,4 @@
-w{
+{
   "version": 2,
   "buildCommand": "uv pip install --system -r requirements.txt && python3 build.py",
   "outputDirectory": "public",
