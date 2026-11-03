@@ -1,0 +1,20 @@
+{
+  "name": "datos-bolivia",
+  "version": "1.0.0",
+  "description": "Plataforma Jamstack estática de indicadores macroeconómicos y matrices limpias de Bolivia (INE)",
+  "scripts": {
+    "build": "python3 build.py",
+    "validate": "python3 validate_data.py",
+    "test": "pytest validate_data.py"
+  },
+  "keywords": [
+    "bolivia",
+    "ine",
+    "macroeconomia",
+    "pib",
+    "inflacion",
+    "comercio-exterior"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,705 @@
+anio,periodo,area_o_ciudad,linea_pobreza_bs_mes
+1989,Ene 1989,Cobija,122.99
+1989,Ene 1989,Cobija,62.48
+1989,Ene 1989,Cochabamba,123.46
+1989,Ene 1989,Cochabamba,62.35
+1989,Ene 1989,El Alto,101.11
+1989,Ene 1989,El Alto,61.37
+1989,Ene 1989,La Paz,117.39
+1989,Ene 1989,La Paz,65.27
+1989,Ene 1989,Oruro,106.75
+1989,Ene 1989,Oruro,59.35
+1989,Ene 1989,Potosí,98.18
+1989,Ene 1989,Potosí,54.59
+1989,Ene 1989,Santa Cruz de la Sierra,122.99
+1989,Ene 1989,Santa Cruz de la Sierra,62.48
+1989,Ene 1989,Sucre,117.95
+1989,Ene 1989,Sucre,59.56
+1989,Ene 1989,Tarija,125.48
+1989,Ene 1989,Tarija,63.37
+1989,Ene 1989,Trinidad,122.99
+1989,Ene 1989,Trinidad,62.48
+1989,Ene 1989,URBANA,115.14
+1989,Ene 1989,URBANA,61.2
+1990,Oct 1990,Cobija,160.2
+1990,Oct 1990,Cobija,81.38
+1990,Oct 1990,Cochabamba,160.81
+1990,Oct 1990,Cochabamba,81.21
+1990,Oct 1990,El Alto,131.7
+1990,Oct 1990,El Alto,79.94
+1990,Oct 1990,La Paz,152.91
+1990,Oct 1990,La Paz,85.02
+1990,Oct 1990,Oruro,139.05
+1990,Oct 1990,Oruro,77.31
+1990,Oct 1990,Potosí,127.88
+1990,Oct 1990,Potosí,71.1
+1990,Oct 1990,Santa Cruz de la Sierra,160.2
+1990,Oct 1990,Santa Cruz de la Sierra,81.38
+1990,Oct 1990,Sucre,153.63
+1990,Oct 1990,Sucre,77.58
+1990,Oct 1990,Tarija,163.44
+1990,Oct 1990,Tarija,82.54
+1990,Oct 1990,Trinidad,160.2
+1990,Oct 1990,Trinidad,81.38
+1990,Oct 1990,URBANA,149.98
+1990,Oct 1990,URBANA,79.72
+1991,Oct 1991,Cobija,189.37
+1991,Oct 1991,Cobija,96.2
+1991,Oct 1991,Cochabamba,190.1
+1991,Oct 1991,Cochabamba,96.0
+1991,Oct 1991,El Alto,155.68
+1991,Oct 1991,El Alto,94.5
+1991,Oct 1991,La Paz,180.76
+1991,Oct 1991,La Paz,100.5
+1991,Oct 1991,Oruro,164.37
+1991,Oct 1991,Oruro,91.39
+1991,Oct 1991,Potosí,151.17
+1991,Oct 1991,Potosí,84.05
+1991,Oct 1991,Santa Cruz de la Sierra,189.37
+1991,Oct 1991,Santa Cruz de la Sierra,96.2
+1991,Oct 1991,Sucre,181.61
+1991,Oct 1991,Sucre,91.71
+1991,Oct 1991,Tarija,193.2
+1991,Oct 1991,Tarija,97.57
+1991,Oct 1991,Trinidad,189.37
+1991,Oct 1991,Trinidad,96.2
+1991,Oct 1991,URBANA,177.29
+1991,Oct 1991,URBANA,94.24
+1992,Oct 1992,Cobija,203.94
+1992,Oct 1992,Cobija,103.6
+1992,Oct 1992,Cochabamba,205.54
+1992,Oct 1992,Cochabamba,103.8
+1992,Oct 1992,El Alto,172.82
+1992,Oct 1992,El Alto,104.9
+1992,Oct 1992,La Paz,200.0
+1992,Oct 1992,La Paz,111.2
+1992,Oct 1992,Oruro,181.87
+1992,Oct 1992,Oruro,101.12
+1992,Oct 1992,Potosí,167.27
+1992,Oct 1992,Potosí,93.0
+1992,Oct 1992,Santa Cruz de la Sierra,203.94
+1992,Oct 1992,Santa Cruz de la Sierra,103.6
+1992,Oct 1992,Sucre,196.36
+1992,Oct 1992,Sucre,99.16
+1992,Oct 1992,Tarija,208.9
+1992,Oct 1992,Tarija,105.49
+1992,Oct 1992,Trinidad,203.94
+1992,Oct 1992,Trinidad,103.6
+1992,Oct 1992,URBANA,193.4
+1992,Oct 1992,URBANA,102.88
+1993,May-Oct 1993,Cobija,216.34
+1993,May-Oct 1993,Cobija,109.9
+1993,May-Oct 1993,Cochabamba,217.43
+1993,May-Oct 1993,Cochabamba,109.8
+1993,May-Oct 1993,El Alto,181.38
+1993,May-Oct 1993,El Alto,110.1
+1993,May-Oct 1993,La Paz,213.67
+1993,May-Oct 1993,La Paz,118.8
+1993,May-Oct 1993,Oruro,194.3
+1993,May-Oct 1993,Oruro,108.03
+1993,May-Oct 1993,Potosí,178.7
+1993,May-Oct 1993,Potosí,99.36
+1993,May-Oct 1993,Santa Cruz de la Sierra,216.34
+1993,May-Oct 1993,Santa Cruz de la Sierra,109.9
+1993,May-Oct 1993,Sucre,207.71
+1993,May-Oct 1993,Sucre,104.9
+1993,May-Oct 1993,Tarija,220.97
+1993,May-Oct 1993,Tarija,111.59
+1993,May-Oct 1993,Trinidad,216.34
+1993,May-Oct 1993,Trinidad,109.9
+1993,May-Oct 1993,URBANA,205.2
+1993,May-Oct 1993,URBANA,109.15
+1994,May-Oct 1994,Cobija,237.6
+1994,May-Oct 1994,Cobija,120.7
+1994,May-Oct 1994,Cochabamba,253.27
+1994,May-Oct 1994,Cochabamba,127.9
+1994,May-Oct 1994,El Alto,192.26
+1994,May-Oct 1994,El Alto,116.7
+1994,May-Oct 1994,La Paz,227.7
+1994,May-Oct 1994,La Paz,126.6
+1994,May-Oct 1994,Oruro,207.05
+1994,May-Oct 1994,Oruro,115.12
+1994,May-Oct 1994,Potosí,190.43
+1994,May-Oct 1994,Potosí,105.88
+1994,May-Oct 1994,Santa Cruz de la Sierra,237.6
+1994,May-Oct 1994,Santa Cruz de la Sierra,120.7
+1994,May-Oct 1994,Sucre,241.95
+1994,May-Oct 1994,Sucre,122.19
+1994,May-Oct 1994,Tarija,257.4
+1994,May-Oct 1994,Tarija,129.99
+1994,May-Oct 1994,Trinidad,237.6
+1994,May-Oct 1994,Trinidad,120.7
+1994,May-Oct 1994,URBANA,227.25
+1994,May-Oct 1994,URBANA,120.64
+1995,May 1995,Cobija,264.17
+1995,May 1995,Cobija,134.2
+1995,May 1995,Cochabamba,270.3
+1995,May 1995,Cochabamba,136.5
+1995,May 1995,El Alto,211.37
+1995,May 1995,El Alto,128.3
+1995,May 1995,La Paz,255.76
+1995,May 1995,La Paz,142.2
+1995,May 1995,Oruro,232.57
+1995,May 1995,Oruro,129.31
+1995,May 1995,Potosí,213.9
+1995,May 1995,Potosí,118.93
+1995,May 1995,Santa Cruz de la Sierra,264.17
+1995,May 1995,Santa Cruz de la Sierra,134.2
+1995,May 1995,Sucre,258.22
+1995,May 1995,Sucre,130.4
+1995,May 1995,Tarija,274.71
+1995,May 1995,Tarija,138.73
+1995,May 1995,Trinidad,264.17
+1995,May 1995,Trinidad,134.2
+1995,May 1995,URBANA,249.46
+1995,May 1995,URBANA,132.53
+1996,May 1996,Cobija,313.7
+1996,Oct 1996,Cobija,325.03
+1996,May 1996,Cobija,159.36
+1996,Oct 1996,Cobija,165.12
+1996,May 1996,Cochabamba,299.7
+1996,Oct 1996,Cochabamba,317.31
+1996,May 1996,Cochabamba,151.35
+1996,Oct 1996,Cochabamba,160.24
+1996,May 1996,El Alto,239.61
+1996,Oct 1996,El Alto,246.46
+1996,May 1996,El Alto,145.44
+1996,Oct 1996,El Alto,149.6
+1996,May 1996,La Paz,284.76
+1996,Oct 1996,La Paz,304.77
+1996,May 1996,La Paz,158.33
+1996,Oct 1996,La Paz,169.45
+1996,May 1996,Oruro,258.94
+1996,Oct 1996,Oruro,277.14
+1996,May 1996,Oruro,143.97
+1996,Oct 1996,Oruro,154.09
+1996,May 1996,Potosí,238.15
+1996,Oct 1996,Potosí,254.89
+1996,May 1996,Potosí,132.41
+1996,Oct 1996,Potosí,141.72
+1996,May 1996,RURAL(1),220.26
+1996,Oct 1996,RURAL(1),220.83
+1996,May 1996,RURAL(1),125.17
+1996,Oct 1996,RURAL(1),125.49
+1996,May 1996,Santa Cruz de la Sierra,313.7
+1996,Oct 1996,Santa Cruz de la Sierra,325.03
+1996,May 1996,Santa Cruz de la Sierra,159.36
+1996,Oct 1996,Santa Cruz de la Sierra,165.12
+1996,May 1996,Sucre,286.31
+1996,Oct 1996,Sucre,303.13
+1996,May 1996,Sucre,144.59
+1996,Oct 1996,Sucre,153.08
+1996,May 1996,Tarija,304.59
+1996,Oct 1996,Tarija,322.48
+1996,May 1996,Tarija,153.82
+1996,Oct 1996,Tarija,162.85
+1996,May 1996,Trinidad,313.7
+1996,Oct 1996,Trinidad,325.03
+1996,May 1996,Trinidad,159.36
+1996,Oct 1996,Trinidad,165.12
+1996,May 1996,URBANA,282.16
+1996,Oct 1996,URBANA,297.36
+1996,May 1996,URBANA,149.85
+1996,Oct 1996,URBANA,157.92
+1997,Oct 1997,Cobija,338.19
+1997,Oct 1997,Cobija,171.8
+1997,Oct 1997,Cochabamba,340.24
+1997,Oct 1997,Cochabamba,171.82
+1997,Oct 1997,El Alto,261.15
+1997,Oct 1997,El Alto,158.52
+1997,Oct 1997,La Paz,319.01
+1997,Oct 1997,La Paz,177.37
+1997,Oct 1997,Oruro,290.09
+1997,Oct 1997,Oruro,161.29
+1997,Oct 1997,Potosí,266.8
+1997,Oct 1997,Potosí,148.34
+1997,Oct 1997,RURAL(1),230.0
+1997,Oct 1997,RURAL(1),130.7
+1997,Oct 1997,Santa Cruz de la Sierra,338.19
+1997,Oct 1997,Santa Cruz de la Sierra,171.8
+1997,Oct 1997,Sucre,325.04
+1997,Oct 1997,Sucre,164.14
+1997,Oct 1997,Tarija,345.79
+1997,Oct 1997,Tarija,174.62
+1997,Oct 1997,Trinidad,338.19
+1997,Oct 1997,Trinidad,171.8
+1997,Oct 1997,URBANA,313.83
+1997,Oct 1997,URBANA,166.63
+1999,Oct 1999,Cobija,354.67
+1999,Oct 1999,Cobija,180.17
+1999,Oct 1999,Cochabamba,351.1
+1999,Oct 1999,Cochabamba,177.31
+1999,Oct 1999,El Alto,270.38
+1999,Oct 1999,El Alto,164.12
+1999,Oct 1999,La Paz,324.03
+1999,Oct 1999,La Paz,180.16
+1999,Oct 1999,Oruro,294.65
+1999,Oct 1999,Oruro,163.83
+1999,Oct 1999,Potosí,271.0
+1999,Oct 1999,Potosí,150.68
+1999,Oct 1999,RURAL(1),237.1
+1999,Oct 1999,RURAL(1),134.74
+1999,Oct 1999,Santa Cruz de la Sierra,354.67
+1999,Oct 1999,Santa Cruz de la Sierra,180.17
+1999,Oct 1999,Sucre,335.42
+1999,Oct 1999,Sucre,169.39
+1999,Oct 1999,Tarija,356.83
+1999,Oct 1999,Tarija,180.2
+1999,Oct 1999,Trinidad,354.67
+1999,Oct 1999,Trinidad,180.17
+1999,Oct 1999,URBANA,323.64
+1999,Oct 1999,URBANA,171.78
+2000,Dic 2000,Cobija,353.92
+2000,Dic 2000,Cobija,179.79
+2000,Dic 2000,Cochabamba,351.23
+2000,Dic 2000,Cochabamba,177.37
+2000,Dic 2000,El Alto,268.75
+2000,Dic 2000,El Alto,163.13
+2000,Dic 2000,La Paz,325.07
+2000,Dic 2000,La Paz,180.74
+2000,Dic 2000,Oruro,295.6
+2000,Dic 2000,Oruro,164.35
+2000,Dic 2000,Potosí,271.87
+2000,Dic 2000,Potosí,151.16
+2000,Dic 2000,RURAL(1),231.6
+2000,Dic 2000,RURAL(1),131.61
+2000,Dic 2000,Santa Cruz de la Sierra,353.92
+2000,Dic 2000,Santa Cruz de la Sierra,179.79
+2000,Dic 2000,Sucre,335.54
+2000,Dic 2000,Sucre,169.45
+2000,Dic 2000,Tarija,351.23
+2000,Dic 2000,Tarija,177.37
+2000,Dic 2000,Trinidad,353.92
+2000,Dic 2000,Trinidad,179.79
+2000,Dic 2000,URBANA,323.01
+2000,Dic 2000,URBANA,171.46
+2001,Oct-Nov 2001,Cobija,343.2
+2001,Oct-Nov 2001,Cobija,174.35
+2001,Oct-Nov 2001,Cochabamba,348.84
+2001,Oct-Nov 2001,Cochabamba,176.16
+2001,Oct-Nov 2001,El Alto,271.52
+2001,Oct-Nov 2001,El Alto,164.81
+2001,Oct-Nov 2001,La Paz,327.42
+2001,Oct-Nov 2001,La Paz,182.04
+2001,Oct-Nov 2001,Oruro,297.73
+2001,Oct-Nov 2001,Oruro,165.54
+2001,Oct-Nov 2001,Potosí,273.83
+2001,Oct-Nov 2001,Potosí,152.25
+2001,Oct-Nov 2001,RURAL(1),231.47
+2001,Oct-Nov 2001,RURAL(1),131.53
+2001,Oct-Nov 2001,Santa Cruz de la Sierra,343.2
+2001,Oct-Nov 2001,Santa Cruz de la Sierra,174.35
+2001,Oct-Nov 2001,Sucre,333.26
+2001,Oct-Nov 2001,Sucre,168.29
+2001,Oct-Nov 2001,Tarija,348.84
+2001,Oct-Nov 2001,Tarija,176.16
+2001,Oct-Nov 2001,Trinidad,343.2
+2001,Oct-Nov 2001,Trinidad,174.35
+2001,Oct-Nov 2001,URBANA,320.87
+2001,Oct-Nov 2001,URBANA,170.44
+2002,Nov-Dic 2002,Cobija,343.87
+2002,Nov-Dic 2002,Cobija,174.69
+2002,Nov-Dic 2002,Cochabamba,351.29
+2002,Nov-Dic 2002,Cochabamba,177.4
+2002,Nov-Dic 2002,El Alto,272.15
+2002,Nov-Dic 2002,El Alto,165.2
+2002,Nov-Dic 2002,La Paz,327.04
+2002,Nov-Dic 2002,La Paz,181.84
+2002,Nov-Dic 2002,Oruro,297.39
+2002,Nov-Dic 2002,Oruro,165.35
+2002,Nov-Dic 2002,Potosí,273.52
+2002,Nov-Dic 2002,Potosí,152.08
+2002,Nov-Dic 2002,RURAL(1),233.39
+2002,Nov-Dic 2002,RURAL(1),133.03
+2002,Nov-Dic 2002,Santa Cruz de la Sierra,343.87
+2002,Nov-Dic 2002,Santa Cruz de la Sierra,174.69
+2002,Nov-Dic 2002,Sucre,335.6
+2002,Nov-Dic 2002,Sucre,169.48
+2002,Nov-Dic 2002,Tarija,351.29
+2002,Nov-Dic 2002,Tarija,177.4
+2002,Nov-Dic 2002,Trinidad,343.87
+2002,Nov-Dic 2002,Trinidad,174.69
+2002,Nov-Dic 2002,URBANA,321.78
+2002,Nov-Dic 2002,URBANA,170.9
+2004,Nov 2003 Abr 2004,Cobija,357.03
+2004,May-Oct 2004,Cobija,362.72
+2004,Nov 2003 Abr 2004,Cobija,181.37
+2004,May-Oct 2004,Cobija,184.26
+2004,Nov 2003 Abr 2004,Cochabamba,355.71
+2004,May-Oct 2004,Cochabamba,362.99
+2004,Nov 2003 Abr 2004,Cochabamba,179.63
+2004,May-Oct 2004,Cochabamba,183.31
+2004,Nov 2003 Abr 2004,El Alto,284.22
+2004,May-Oct 2004,El Alto,288.74
+2004,Nov 2003 Abr 2004,El Alto,172.52
+2004,May-Oct 2004,El Alto,175.26
+2004,Nov 2003 Abr 2004,La Paz,340.95
+2004,May-Oct 2004,La Paz,347.72
+2004,Nov 2003 Abr 2004,La Paz,189.57
+2004,May-Oct 2004,La Paz,193.33
+2004,Nov 2003 Abr 2004,Oruro,310.04
+2004,May-Oct 2004,Oruro,316.19
+2004,Nov 2003 Abr 2004,Oruro,172.38
+2004,May-Oct 2004,Oruro,175.8
+2004,Nov 2003 Abr 2004,Potosí,285.15
+2004,May-Oct 2004,Potosí,290.81
+2004,Nov 2003 Abr 2004,Potosí,158.55
+2004,May-Oct 2004,Potosí,161.69
+2004,Nov 2003 Abr 2004,RURAL(1),270.53
+2004,May-Oct 2004,RURAL(1),276.42
+2004,Nov 2003 Abr 2004,RURAL(1),154.2
+2004,May-Oct 2004,RURAL(1),157.56
+2004,Nov 2003 Abr 2004,Santa Cruz de la Sierra,357.03
+2004,May-Oct 2004,Santa Cruz de la Sierra,362.72
+2004,Nov 2003 Abr 2004,Santa Cruz de la Sierra,181.37
+2004,May-Oct 2004,Santa Cruz de la Sierra,184.26
+2004,Nov 2003 Abr 2004,Sucre,339.82
+2004,May-Oct 2004,Sucre,346.77
+2004,Nov 2003 Abr 2004,Sucre,171.61
+2004,May-Oct 2004,Sucre,175.12
+2004,Nov 2003 Abr 2004,Tarija,355.71
+2004,May-Oct 2004,Tarija,362.99
+2004,Nov 2003 Abr 2004,Tarija,179.63
+2004,May-Oct 2004,Tarija,183.31
+2004,Nov 2003 Abr 2004,Trinidad,357.03
+2004,May-Oct 2004,Trinidad,362.72
+2004,Nov 2003 Abr 2004,Trinidad,181.37
+2004,May-Oct 2004,Trinidad,184.26
+2004,Nov 2003 Abr 2004,URBANA,331.74
+2004,May-Oct 2004,URBANA,337.96
+2004,Nov 2003 Abr 2004,URBANA,176.29
+2004,May-Oct 2004,URBANA,179.59
+2005,Nov-Dic 2005,Cobija,388.83
+2005,Nov-Dic 2005,Cobija,197.53
+2005,Nov-Dic 2005,Cochabamba,384.5
+2005,Nov-Dic 2005,Cochabamba,194.17
+2005,Nov-Dic 2005,El Alto,299.56
+2005,Nov-Dic 2005,El Alto,181.83
+2005,Nov-Dic 2005,La Paz,368.77
+2005,Nov-Dic 2005,La Paz,205.04
+2005,Nov-Dic 2005,Oruro,335.34
+2005,Nov-Dic 2005,Oruro,186.45
+2005,Nov-Dic 2005,Potosí,308.42
+2005,Nov-Dic 2005,Potosí,171.48
+2005,Nov-Dic 2005,RURAL(1),281.52
+2005,Nov-Dic 2005,RURAL(1),160.47
+2005,Nov-Dic 2005,Santa Cruz de la Sierra,388.83
+2005,Nov-Dic 2005,Santa Cruz de la Sierra,197.53
+2005,Nov-Dic 2005,Sucre,367.32
+2005,Nov-Dic 2005,Sucre,185.5
+2005,Nov-Dic 2005,Tarija,384.5
+2005,Nov-Dic 2005,Tarija,194.17
+2005,Nov-Dic 2005,Trinidad,388.83
+2005,Nov-Dic 2005,Trinidad,197.53
+2005,Nov-Dic 2005,URBANA,358.45
+2005,Nov-Dic 2005,URBANA,190.41
+2006,Nov-Dic 2006,Cobija,422.15
+2006,Nov-Dic 2006,Cobija,214.45
+2006,Nov-Dic 2006,Cochabamba,418.26
+2006,Nov-Dic 2006,Cochabamba,211.22
+2006,Nov-Dic 2006,El Alto,313.34
+2006,Nov-Dic 2006,El Alto,190.2
+2006,Nov-Dic 2006,La Paz,385.47
+2006,Nov-Dic 2006,La Paz,214.32
+2006,Nov-Dic 2006,Oruro,350.52
+2006,Nov-Dic 2006,Oruro,194.89
+2006,Nov-Dic 2006,Potosí,322.38
+2006,Nov-Dic 2006,Potosí,179.25
+2006,Nov-Dic 2006,RURAL(1),294.0
+2006,Nov-Dic 2006,RURAL(1),167.58
+2006,Nov-Dic 2006,Santa Cruz de la Sierra,422.15
+2006,Nov-Dic 2006,Santa Cruz de la Sierra,214.45
+2006,Nov-Dic 2006,Sucre,399.58
+2006,Nov-Dic 2006,Sucre,201.79
+2006,Nov-Dic 2006,Tarija,418.26
+2006,Nov-Dic 2006,Tarija,211.22
+2006,Nov-Dic 2006,Trinidad,422.15
+2006,Nov-Dic 2006,Trinidad,214.45
+2006,Nov-Dic 2006,URBANA,383.57
+2006,Nov-Dic 2006,URBANA,203.53
+2007,Oct-Nov 2007,Cobija,543.27
+2007,Oct-Nov 2007,Cobija,275.98
+2007,Oct-Nov 2007,Cochabamba,519.91
+2007,Oct-Nov 2007,Cochabamba,261.04
+2007,Oct-Nov 2007,El Alto,370.96
+2007,Oct-Nov 2007,El Alto,225.17
+2007,Oct-Nov 2007,La Paz,430.76
+2007,Oct-Nov 2007,La Paz,239.5
+2007,Oct-Nov 2007,Oruro,391.71
+2007,Oct-Nov 2007,Oruro,217.79
+2007,Oct-Nov 2007,Potosí,360.26
+2007,Oct-Nov 2007,Potosí,200.31
+2007,Oct-Nov 2007,RURAL(1),360.05
+2007,Oct-Nov 2007,RURAL(1),205.23
+2007,Oct-Nov 2007,Santa Cruz de la Sierra,543.27
+2007,Oct-Nov 2007,Santa Cruz de la Sierra,275.98
+2007,Oct-Nov 2007,Sucre,493.82
+2007,Oct-Nov 2007,Sucre,249.38
+2007,Oct-Nov 2007,Tarija,516.91
+2007,Oct-Nov 2007,Tarija,261.04
+2007,Oct-Nov 2007,Trinidad,543.27
+2007,Oct-Nov 2007,Trinidad,275.98
+2007,Oct-Nov 2007,URBANA,463.43
+2007,Oct-Nov 2007,URBANA,245.13
+2008,Nov-Dic 2008,Cobija,734.59
+2008,Nov-Dic 2008,Cobija,373.17
+2008,Nov-Dic 2008,Cochabamba,636.17
+2008,Nov-Dic 2008,Cochabamba,319.41
+2008,Nov-Dic 2008,El Alto,461.12
+2008,Nov-Dic 2008,El Alto,279.9
+2008,Nov-Dic 2008,La Paz,573.8
+2008,Nov-Dic 2008,La Paz,319.03
+2008,Nov-Dic 2008,Oruro,502.74
+2008,Nov-Dic 2008,Oruro,279.52
+2008,Nov-Dic 2008,Potosí,500.8
+2008,Nov-Dic 2008,Potosí,278.45
+2008,Nov-Dic 2008,RURAL(1),456.73
+2008,Nov-Dic 2008,RURAL(1),260.34
+2008,Nov-Dic 2008,Santa Cruz de la Sierra,663.39
+2008,Nov-Dic 2008,Santa Cruz de la Sierra,337.0
+2008,Nov-Dic 2008,Sucre,643.49
+2008,Nov-Dic 2008,Sucre,324.96
+2008,Nov-Dic 2008,Tarija,607.08
+2008,Nov-Dic 2008,Tarija,306.57
+2008,Nov-Dic 2008,Trinidad,581.1
+2008,Nov-Dic 2008,Trinidad,295.2
+2008,Nov-Dic 2008,URBANA,590.43
+2008,Nov-Dic 2008,URBANA,311.32
+2009,Nov-Dic 2009,Cobija,699.28
+2009,Nov-Dic 2009,Cobija,355.23
+2009,Nov-Dic 2009,Cochabamba,664.59
+2009,Nov-Dic 2009,Cochabamba,333.68
+2009,Nov-Dic 2009,El Alto,456.14
+2009,Nov-Dic 2009,El Alto,276.88
+2009,Nov-Dic 2009,La Paz,569.75
+2009,Nov-Dic 2009,La Paz,316.78
+2009,Nov-Dic 2009,Oruro,480.16
+2009,Nov-Dic 2009,Oruro,266.97
+2009,Nov-Dic 2009,Potosí,513.92
+2009,Nov-Dic 2009,Potosí,285.74
+2009,Nov-Dic 2009,RURAL(1),423.8
+2009,Nov-Dic 2009,RURAL(1),241.6
+2009,Nov-Dic 2009,Santa Cruz de la Sierra,681.58
+2009,Nov-Dic 2009,Santa Cruz de la Sierra,346.24
+2009,Nov-Dic 2009,Sucre,656.59
+2009,Nov-Dic 2009,Sucre,331.58
+2009,Nov-Dic 2009,Tarija,652.9
+2009,Nov-Dic 2009,Tarija,329.7
+2009,Nov-Dic 2009,Trinidad,576.79
+2009,Nov-Dic 2009,Trinidad,293.01
+2009,Nov-Dic 2009,URBANA,595.2
+2009,Nov-Dic 2009,URBANA,313.6
+2010,Nov-Dic 2010,Cobija,759.42
+2010,Nov-Dic 2010,Cobija,385.79
+2010,Nov-Dic 2010,Cochabamba,716.27
+2010,Nov-Dic 2010,Cochabamba,359.63
+2010,Nov-Dic 2010,El Alto,496.84
+2010,Nov-Dic 2010,El Alto,301.58
+2010,Nov-Dic 2010,La Paz,613.05
+2010,Nov-Dic 2010,La Paz,340.85
+2010,Nov-Dic 2010,Oruro,513.34
+2010,Nov-Dic 2010,Oruro,285.41
+2010,Nov-Dic 2010,Potosí,549.51
+2010,Nov-Dic 2010,Potosí,305.53
+2010,Nov-Dic 2010,Santa Cruz de la Sierra,716.34
+2010,Nov-Dic 2010,Santa Cruz de la Sierra,363.9
+2010,Nov-Dic 2010,Sucre,711.11
+2010,Nov-Dic 2010,Sucre,359.11
+2010,Nov-Dic 2010,Tarija,706.44
+2010,Nov-Dic 2010,Tarija,356.75
+2010,Nov-Dic 2010,Trinidad,629.7
+2010,Nov-Dic 2010,Trinidad,319.89
+2010,Nov-Dic 2010,URBANA,641.2
+2010,Nov-Dic 2010,URBANA,337.84
+2011,Nov-Dic 2011,Cobija,841.92
+2011,Nov-Dic 2011,Cobija,427.7
+2011,Nov-Dic 2011,Cochabamba,742.15
+2011,Nov-Dic 2011,Cochabamba,372.62
+2011,Nov-Dic 2011,El Alto,526.89
+2011,Nov-Dic 2011,El Alto,319.82
+2011,Nov-Dic 2011,La Paz,668.35
+2011,Nov-Dic 2011,La Paz,371.6
+2011,Nov-Dic 2011,Oruro,544.14
+2011,Nov-Dic 2011,Oruro,302.54
+2011,Nov-Dic 2011,Potosí,594.02
+2011,Nov-Dic 2011,Potosí,330.28
+2011,Nov-Dic 2011,RURAL(1),510.41
+2011,Nov-Dic 2011,RURAL(1),290.93
+2011,Nov-Dic 2011,Santa Cruz de la Sierra,741.98
+2011,Nov-Dic 2011,Santa Cruz de la Sierra,376.93
+2011,Nov-Dic 2011,Sucre,766.52
+2011,Nov-Dic 2011,Sucre,387.09
+2011,Nov-Dic 2011,Tarija,755.47
+2011,Nov-Dic 2011,Tarija,381.51
+2011,Nov-Dic 2011,Trinidad,654.84
+2011,Nov-Dic 2011,Trinidad,332.66
+2011,Nov-Dic 2011,URBANA,683.63
+2011,Nov-Dic 2011,URBANA,360.28
+2012,Nov-Dic 2012,Cobija,833.81
+2012,Nov-Dic 2012,Cobija,423.58
+2012,Nov-Dic 2012,Cochabamba,762.05
+2012,Nov-Dic 2012,Cochabamba,382.62
+2012,Nov-Dic 2012,El Alto,552.97
+2012,Nov-Dic 2012,El Alto,335.65
+2012,Nov-Dic 2012,La Paz,690.41
+2012,Nov-Dic 2012,La Paz,383.87
+2012,Nov-Dic 2012,Oruro,551.66
+2012,Nov-Dic 2012,Oruro,306.72
+2012,Nov-Dic 2012,Potosí,593.56
+2012,Nov-Dic 2012,Potosí,330.02
+2012,Nov-Dic 2012,RURAL(1),523.91
+2012,Nov-Dic 2012,RURAL(1),298.63
+2012,Nov-Dic 2012,Santa Cruz de la Sierra,757.4
+2012,Nov-Dic 2012,Santa Cruz de la Sierra,384.76
+2012,Nov-Dic 2012,Sucre,777.78
+2012,Nov-Dic 2012,Sucre,392.78
+2012,Nov-Dic 2012,Tarija,755.29
+2012,Nov-Dic 2012,Tarija,381.42
+2012,Nov-Dic 2012,Trinidad,656.99
+2012,Nov-Dic 2012,Trinidad,333.75
+2012,Nov-Dic 2012,URBANA,693.19
+2012,Nov-Dic 2012,URBANA,365.52
+2013,Nov-Dic 2013,Cobija,862.53
+2013,Nov-Dic 2013,Cobija,438.17
+2013,Nov-Dic 2013,Cochabamba,802.98
+2013,Nov-Dic 2013,Cochabamba,403.17
+2013,Nov-Dic 2013,El Alto,587.57
+2013,Nov-Dic 2013,El Alto,356.65
+2013,Nov-Dic 2013,La Paz,746.98
+2013,Nov-Dic 2013,La Paz,415.32
+2013,Nov-Dic 2013,Oruro,603.0
+2013,Nov-Dic 2013,Oruro,335.27
+2013,Nov-Dic 2013,Potosí,646.14
+2013,Nov-Dic 2013,Potosí,359.25
+2013,Nov-Dic 2013,RURAL(1),542.25
+2013,Nov-Dic 2013,RURAL(1),309.1
+2013,Nov-Dic 2013,Santa Cruz de la Sierra,784.76
+2013,Nov-Dic 2013,Santa Cruz de la Sierra,398.66
+2013,Nov-Dic 2013,Sucre,824.82
+2013,Nov-Dic 2013,Sucre,416.54
+2013,Nov-Dic 2013,Tarija,796.12
+2013,Nov-Dic 2013,Tarija,402.04
+2013,Nov-Dic 2013,Trinidad,680.09
+2013,Nov-Dic 2013,Trinidad,345.49
+2013,Nov-Dic 2013,URBANA,733.5
+2013,Nov-Dic 2013,URBANA,387.05
+2014,Nov-Dic 2014,Cobija,856.14
+2014,Nov-Dic 2014,Cobija,434.92
+2014,Nov-Dic 2014,Cochabamba,838.2
+2014,Nov-Dic 2014,Cochabamba,420.85
+2014,Nov-Dic 2014,El Alto,614.5
+2014,Nov-Dic 2014,El Alto,373.0
+2014,Nov-Dic 2014,La Paz,760.7
+2014,Nov-Dic 2014,La Paz,422.95
+2014,Nov-Dic 2014,Oruro,620.13
+2014,Nov-Dic 2014,Oruro,344.79
+2014,Nov-Dic 2014,Potosí,653.32
+2014,Nov-Dic 2014,Potosí,363.25
+2014,Nov-Dic 2014,RURAL(1),552.6
+2014,Nov-Dic 2014,RURAL(1),315.0
+2014,Nov-Dic 2014,Santa Cruz de la Sierra,819.59
+2014,Nov-Dic 2014,Santa Cruz de la Sierra,416.35
+2014,Nov-Dic 2014,Sucre,862.19
+2014,Nov-Dic 2014,Sucre,435.41
+2014,Nov-Dic 2014,Tarija,846.89
+2014,Nov-Dic 2014,Tarija,427.68
+2014,Nov-Dic 2014,Trinidad,721.58
+2014,Nov-Dic 2014,Trinidad,366.56
+2014,Nov-Dic 2014,URBANA,759.32
+2014,Nov-Dic 2014,URBANA,400.58
+2015,Nov-Dic 2015,Cobija,844.6
+2015,Nov-Dic 2015,Cobija,429.06
+2015,Nov-Dic 2015,Cochabamba,841.72
+2015,Nov-Dic 2015,Cochabamba,422.62
+2015,Nov-Dic 2015,El Alto,623.45
+2015,Nov-Dic 2015,El Alto,378.43
+2015,Nov-Dic 2015,La Paz,782.71
+2015,Nov-Dic 2015,La Paz,435.19
+2015,Nov-Dic 2015,Oruro,622.42
+2015,Nov-Dic 2015,Oruro,346.07
+2015,Nov-Dic 2015,Potosí,649.35
+2015,Nov-Dic 2015,Potosí,361.04
+2015,Nov-Dic 2015,RURAL(1),550.6
+2015,Nov-Dic 2015,RURAL(1),313.8
+2015,Nov-Dic 2015,Santa Cruz de la Sierra,816.61
+2015,Nov-Dic 2015,Santa Cruz de la Sierra,414.84
+2015,Nov-Dic 2015,Sucre,870.73
+2015,Nov-Dic 2015,Sucre,439.72
+2015,Nov-Dic 2015,Tarija,837.36
+2015,Nov-Dic 2015,Tarija,422.87
+2015,Nov-Dic 2015,Trinidad,714.85
+2015,Nov-Dic 2015,Trinidad,363.15
+2015,Nov-Dic 2015,URBANA,760.38
+2015,Nov-Dic 2015,URBANA,401.3
+2016,Nov-Dic 2016,Cobija,838.1
+2016,Nov-Dic 2016,Cobija,425.76
+2016,Nov-Dic 2016,Cochabamba,867.55
+2016,Nov-Dic 2016,Cochabamba,435.59
+2016,Nov-Dic 2016,El Alto,647.44
+2016,Nov-Dic 2016,El Alto,393.0
+2016,Nov-Dic 2016,La Paz,817.59
+2016,Nov-Dic 2016,La Paz,454.58
+2016,Nov-Dic 2016,Oruro,640.21
+2016,Nov-Dic 2016,Oruro,355.95
+2016,Nov-Dic 2016,Potosí,682.46
+2016,Nov-Dic 2016,Potosí,379.45
+2016,Nov-Dic 2016,RURAL(1),558.79
+2016,Nov-Dic 2016,RURAL(1),318.51
+2016,Nov-Dic 2016,Santa Cruz de la Sierra,845.0
+2016,Nov-Dic 2016,Santa Cruz de la Sierra,429.26
+2016,Nov-Dic 2016,Sucre,888.63
+2016,Nov-Dic 2016,Sucre,448.76
+2016,Nov-Dic 2016,Tarija,863.24
+2016,Nov-Dic 2016,Tarija,435.94
+2016,Nov-Dic 2016,Trinidad,725.81
+2016,Nov-Dic 2016,Trinidad,368.71
+2016,Nov-Dic 2016,URBANA,781.6
+2016,Nov-Dic 2016,URBANA,412.7
+2017,Nov-Dic 2017,Cobija,798.68
+2017,Nov-Dic 2017,Cobija,405.73
+2017,Nov-Dic 2017,Cochabamba,860.97
+2017,Nov-Dic 2017,Cochabamba,432.28
+2017,Nov-Dic 2017,El Alto,640.52
+2017,Nov-Dic 2017,El Alto,388.8
+2017,Nov-Dic 2017,La Paz,801.13
+2017,Nov-Dic 2017,La Paz,445.43
+2017,Nov-Dic 2017,Oruro,637.96
+2017,Nov-Dic 2017,Oruro,354.71
+2017,Nov-Dic 2017,Potosí,671.68
+2017,Nov-Dic 2017,Potosí,373.45
+2017,Nov-Dic 2017,RURAL(1),542.8
+2017,Nov-Dic 2017,RURAL(1),309.4
+2017,Nov-Dic 2017,Santa Cruz de la Sierra,829.48
+2017,Nov-Dic 2017,Santa Cruz de la Sierra,421.38
+2017,Nov-Dic 2017,Sucre,854.97
+2017,Nov-Dic 2017,Sucre,431.76
+2017,Nov-Dic 2017,Tarija,859.57
+2017,Nov-Dic 2017,Tarija,434.08
+2017,Nov-Dic 2017,Trinidad,712.18
+2017,Nov-Dic 2017,Trinidad,361.79
+2017,Nov-Dic 2017,URBANA,766.71
+2017,Nov-Dic 2017,URBANA,404.94
+2018,Nov-Dic 2018,Cobija,815.13
+2018,Nov-Dic 2018,Cobija,414.09
+2018,Nov-Dic 2018,Cochabamba,894.86
+2018,Nov-Dic 2018,Cochabamba,449.3
+2018,Nov-Dic 2018,El Alto,663.1
+2018,Nov-Dic 2018,El Alto,402.5
+2018,Nov-Dic 2018,La Paz,830.0
+2018,Nov-Dic 2018,La Paz,461.48
+2018,Nov-Dic 2018,Oruro,654.14
+2018,Nov-Dic 2018,Oruro,363.7
+2018,Nov-Dic 2018,Potosí,679.1
+2018,Nov-Dic 2018,Potosí,377.58
+2018,Nov-Dic 2018,RURAL(1),567.6
+2018,Nov-Dic 2018,RURAL(1),323.5
+2018,Nov-Dic 2018,Santa Cruz de la Sierra,839.42
+2018,Nov-Dic 2018,Santa Cruz de la Sierra,426.43
+2018,Nov-Dic 2018,Sucre,844.75
+2018,Nov-Dic 2018,Sucre,426.6
+2018,Nov-Dic 2018,Tarija,871.01
+2018,Nov-Dic 2018,Tarija,439.86
+2018,Nov-Dic 2018,Trinidad,724.36
+2018,Nov-Dic 2018,Trinidad,367.98
+2018,Nov-Dic 2018,URBANA,781.59
+2018,Nov-Dic 2018,URBANA,412.95

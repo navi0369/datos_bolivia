@@ -1,0 +1,398 @@
+{
+  "source": "Instituto Nacional de Estadística (INE) - Bolivia",
+  "portal_url": "https://www.ine.gob.bo/",
+  "generated_at": "2026-11-03T12:53:02.967184",
+  "indicators_count": 12,
+  "successful_downloads": 12,
+  "indicators": [
+    {
+      "id": "01_pib_anual",
+      "name": "Producto Interno Bruto (PIB) Anual - Precios Constantes",
+      "category": "Cuentas Nacionales",
+      "frequency": "Anual",
+      "description": "Serie histórica del PIB a precios constantes por año según tipo de actividad económica (1980 - 2024).",
+      "source_page": "https://www.ine.gob.bo/index.php/estadisticas-economicas/pib-y-cuentas-nacionales/producto-interno-bruto-anual/serie-historica-del-producto-interno-bruto/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/5HukXcuvSj76wKo/download",
+      "dynamic_scraped": true,
+      "original_filename": "06.01.01.xlsx",
+      "canonical_filename": "pib_anual_precios_constantes_1980_2024.xlsx",
+      "local_path": "data/raw/01_pib_anual/pib_anual_precios_constantes_1980_2024.xlsx",
+      "file_size_bytes": 100626,
+      "file_size_kb": 98.27,
+      "downloaded_at": "2026-11-03T12:52:44.644189",
+      "excel_info": {
+        "sheet_count": 1,
+        "sheets": [
+          {
+            "name": "06.01.01",
+            "rows": 57,
+            "columns": 50
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "02_pib_trimestral",
+      "name": "Producto Interno Bruto (PIB) Trimestral",
+      "category": "Cuentas Nacionales",
+      "frequency": "Trimestral",
+      "description": "PIB a precios de mercado y constantes por actividad económica por trimestre.",
+      "source_page": "https://www.ine.gob.bo/index.php/estadisticas-economicas/pib-y-cuentas-nacionales/producto-interno-bruto-trimestral/producto-interno-bruto-trimestral-intro/",
+      "download_url": "https://nimbus.ine.gob.bo/index.php/s/LgCGFBWiz2QccwP/download",
+      "dynamic_scraped": true,
+      "original_filename": "01.01.01.xlsx",
+      "canonical_filename": "pib_trimestral_precios_constantes.xlsx",
+      "local_path": "data/raw/02_pib_trimestral/pib_trimestral_precios_constantes.xlsx",
+      "file_size_bytes": 99821,
+      "file_size_kb": 97.48,
+      "downloaded_at": "2026-11-03T12:52:45.499824",
+      "excel_info": {
+        "sheet_count": 1,
+        "sheets": [
+          {
+            "name": "01.01.01",
+            "rows": 200,
+            "columns": 108
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "03_inflacion_ipc",
+      "name": "Índice de Precios al Consumidor (IPC) e Inflación Acumulada",
+      "category": "Precios e Inflación",
+      "frequency": "Mensual",
+      "description": "Serie empalmada nacional oficial: Índice general, variación mensual, acumulada (inflación acumulada) y a 12 meses.",
+      "source_page": "https://www.ine.gob.bo/index.php/serie-historica-empalmada/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/JZUH1mjiKSSURdN/download",
+      "dynamic_scraped": true,
+      "original_filename": "Emp - 2026_09_1_Nal - Serie_Historica.xlsx",
+      "canonical_filename": "ipc_nacional_variacion_acumulada_mensual.xlsx",
+      "local_path": "data/raw/03_inflacion_ipc/ipc_nacional_variacion_acumulada_mensual.xlsx",
+      "file_size_bytes": 329157,
+      "file_size_kb": 321.44,
+      "downloaded_at": "2026-11-03T12:52:46.285865",
+      "excel_info": {
+        "sheet_count": 5,
+        "sheets": [
+          {
+            "name": "INICIO",
+            "rows": 16,
+            "columns": 15
+          },
+          {
+            "name": "CUADRO Nº 1.1 ÍNDICE MENSUAL",
+            "rows": 21,
+            "columns": 91
+          },
+          {
+            "name": "CUADRO Nº 1.2 VAR MENSUAL",
+            "rows": 21,
+            "columns": 91
+          },
+          {
+            "name": "CUADRO Nº 1.3 VAR ACUMULADA",
+            "rows": 19,
+            "columns": 91
+          },
+          {
+            "name": "CUADRO Nº 1.4 VAR 12 MESES",
+            "rows": 19,
+            "columns": 91
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "04_inflacion_ipc_division",
+      "name": "IPC e Inflación por División de Gasto (Canasta de Bienes)",
+      "category": "Precios e Inflación",
+      "frequency": "Mensual",
+      "description": "Índice general y variaciones mensual, acumulada y a 12 meses desglosado por división de gasto (Alimentos, Transporte, Vivienda, Salud, etc.).",
+      "source_page": "https://www.ine.gob.bo/index.php/serie-historica-empalmada/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/cgXaupaB4Twheqg/download",
+      "dynamic_scraped": true,
+      "original_filename": "Emp - 2026_09_2_Nal - Bolivia_Indice_Division_Var_Mensual_12_Meses_Acumulado_Base_2016.xlsx",
+      "canonical_filename": "ipc_por_division_de_gasto.xlsx",
+      "local_path": "data/raw/04_inflacion_ipc_division/ipc_por_division_de_gasto.xlsx",
+      "file_size_bytes": 495377,
+      "file_size_kb": 483.77,
+      "downloaded_at": "2026-11-03T12:52:47.141711",
+      "excel_info": {
+        "sheet_count": 5,
+        "sheets": [
+          {
+            "name": "INICIO",
+            "rows": 16,
+            "columns": 15
+          },
+          {
+            "name": "CUADRO Nº 1.1 BOL INDICE",
+            "rows": 22,
+            "columns": 225
+          },
+          {
+            "name": "CUADRO Nº 1.2 BOL VAR MENSUAL",
+            "rows": 21,
+            "columns": 225
+          },
+          {
+            "name": "CUADRO Nº 1.3 BOL VAR ACUMULADA",
+            "rows": 21,
+            "columns": 225
+          },
+          {
+            "name": "CUADRO Nº 1.4 BOL VAR 12 MESES",
+            "rows": 21,
+            "columns": 225
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "05_exportaciones",
+      "name": "Exportaciones (X) según Actividad Económica y Producto",
+      "category": "Sector Externo",
+      "frequency": "Mensual / Anual",
+      "description": "Exportaciones bolivianas valor FOB según actividad económica y grandes productos (Gas natural, minerales, agroindustria) 1992 - 2026.",
+      "source_page": "https://www.ine.gob.bo/index.php/estadisticas-economicas/comercio-exterior/cuadros-estadisticos-exportaciones/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/yJT9Q8KKyvhG4pi/download",
+      "dynamic_scraped": true,
+      "original_filename": "Bolivia - Exportaciones segun Actividad Economica y Producto por Año y Mes, 1992 - 2026.xlsx",
+      "canonical_filename": "exportaciones_actividad_y_producto_1992_2026.xlsx",
+      "local_path": "data/raw/05_exportaciones/exportaciones_actividad_y_producto_1992_2026.xlsx",
+      "file_size_bytes": 1018582,
+      "file_size_kb": 994.71,
+      "downloaded_at": "2026-11-03T12:52:48.690845",
+      "excel_info": {
+        "sheet_count": 4,
+        "sheets": [
+          {
+            "name": "ExpActProdMes 92-26 Valor",
+            "rows": 105,
+            "columns": 419
+          },
+          {
+            "name": "ExpActProdMes 92-26 Peso",
+            "rows": 105,
+            "columns": 419
+          },
+          {
+            "name": "ExpActProdAño 92-26 Valor",
+            "rows": 104,
+            "columns": 37
+          },
+          {
+            "name": "ExpActProdAño 92-26 Peso",
+            "rows": 104,
+            "columns": 37
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "06_importaciones",
+      "name": "Importaciones (M) por Año y Mes",
+      "category": "Sector Externo",
+      "frequency": "Mensual / Anual",
+      "description": "Importaciones bolivianas valor CIF según año y mes (1992 - 2026) y grandes categorías.",
+      "source_page": "https://www.ine.gob.bo/index.php/estadisticas-economicas/comercio-exterior/importaciones-cuadros-estadisticos/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/jYn9F8zMaAiAj3C/download",
+      "dynamic_scraped": true,
+      "original_filename": "Bolivia - Importaciones por Año y Mes 1992 - 2026.xlsx",
+      "canonical_filename": "importaciones_por_ano_y_mes_1992_2026.xlsx",
+      "local_path": "data/raw/06_importaciones/importaciones_por_ano_y_mes_1992_2026.xlsx",
+      "file_size_bytes": 110773,
+      "file_size_kb": 108.18,
+      "downloaded_at": "2026-11-03T12:52:49.562474",
+      "excel_info": {
+        "sheet_count": 1,
+        "sheets": [
+          {
+            "name": "Importaciones_1992_2026",
+            "rows": 494,
+            "columns": 6
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "07_balanza_comercial",
+      "name": "Balanza Comercial (Saldo Comercial: X - M)",
+      "category": "Sector Externo",
+      "frequency": "Mensual / Anual",
+      "description": "Evolución histórica del comercio exterior boliviano: Exportaciones, Importaciones y Saldo Comercial (superávit / déficit) 1992 - 2026.",
+      "source_page": "https://www.ine.gob.bo/index.php/estadisticas-economicas/comercio-exterior/saldo-comercial-cuadros-estadisticos/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/YmNagUYOHcty0fZ/download",
+      "dynamic_scraped": true,
+      "original_filename": "Bolivia - Comercio Exterior segun Año y Mes, 1992 - 2026.xlsx",
+      "canonical_filename": "balanza_comercial_saldo_1992_2026.xlsx",
+      "local_path": "data/raw/07_balanza_comercial/balanza_comercial_saldo_1992_2026.xlsx",
+      "file_size_bytes": 105977,
+      "file_size_kb": 103.49,
+      "downloaded_at": "2026-11-03T12:52:50.365954",
+      "excel_info": {
+        "sheet_count": 1,
+        "sheets": [
+          {
+            "name": "COMEX MENSUAL 92-26",
+            "rows": 426,
+            "columns": 11
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "08_pobreza_desigualdad",
+      "name": "Indicadores de Pobreza Moderada y Extrema",
+      "category": "Pobreza y Condiciones Sociales",
+      "frequency": "Anual",
+      "description": "Incidencia de pobreza moderada y pobreza extrema según departamento y área geográfica (urbana / rural) de la Encuesta de Hogares.",
+      "source_page": "https://www.ine.gob.bo/index.php/estadisticas-economicas/encuestas-de-hogares/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/vCTjbb2bemzYtDT/download",
+      "dynamic_scraped": true,
+      "original_filename": "3060107.xlsx",
+      "canonical_filename": "pobreza_incidencia_departamental_y_area.xlsx",
+      "local_path": "data/raw/08_pobreza_desigualdad/pobreza_incidencia_departamental_y_area.xlsx",
+      "file_size_bytes": 315747,
+      "file_size_kb": 308.35,
+      "downloaded_at": "2026-11-03T12:52:55.306971",
+      "excel_info": {
+        "sheet_count": 1,
+        "sheets": [
+          {
+            "name": "3.06.01.07",
+            "rows": 51,
+            "columns": 12
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "09_tasa_desocupacion",
+      "name": "Tasa de Desocupación Urbana (Empleo / Desempleo)",
+      "category": "Mercado Laboral",
+      "frequency": "Mensual / Trimestral",
+      "description": "Tasa de desocupación urbana desestacionalizada por mes según sexo (Encuesta Continua de Empleo - ECE 2015 - 2026).",
+      "source_page": "https://www.ine.gob.bo/index.php/estadisticas-sociales/bolivia-area-urbana-tasa-de-desocupacion-desestacionalizada/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/5TvMscznkP1SxvQ/download",
+      "dynamic_scraped": true,
+      "original_filename": "3.05.01.13.xlsx",
+      "canonical_filename": "tasa_desocupacion_urbana_2015_2026.xlsx",
+      "local_path": "data/raw/09_tasa_desocupacion/tasa_desocupacion_urbana_2015_2026.xlsx",
+      "file_size_bytes": 125181,
+      "file_size_kb": 122.25,
+      "downloaded_at": "2026-11-03T12:52:56.381246",
+      "excel_info": {
+        "sheet_count": 1,
+        "sheets": [
+          {
+            "name": "3.05.01.13",
+            "rows": 24,
+            "columns": 133
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "10_igae",
+      "name": "Índice Global de Actividad Económica (IGAE)",
+      "category": "Cuentas Nacionales",
+      "frequency": "Mensual",
+      "description": "Indicador mensual del desempeño de la actividad económica general de Bolivia y variación acumulada (2008 - 2024).",
+      "source_page": "https://www.ine.gob.bo/index.php/estadisticas-economicas/indice-global-de-actividad-economica-igae/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/6Szm6RmYSBeRnsD/download",
+      "dynamic_scraped": true,
+      "original_filename": "01.02.xlsx",
+      "canonical_filename": "igae_mensual_y_acumulado_2008_2024.xlsx",
+      "local_path": "data/raw/10_igae/igae_mensual_y_acumulado_2008_2024.xlsx",
+      "file_size_bytes": 120152,
+      "file_size_kb": 117.34,
+      "downloaded_at": "2026-11-03T12:52:57.055662",
+      "excel_info": {
+        "sheet_count": 1,
+        "sheets": [
+          {
+            "name": "01.02",
+            "rows": 78,
+            "columns": 205
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "11_lineas_pobreza",
+      "name": "Líneas de Pobreza y Pobreza Extrema Monetaria",
+      "category": "Pobreza y Condiciones Sociales",
+      "frequency": "Anual",
+      "description": "Valor monetario de las canastas básicas de consumo (Línea de Pobreza) y alimentaria (Línea de Pobreza Extrema) en Bs por persona/mes.",
+      "source_page": "https://www.ine.gob.bo/index.php/estadisticas-economicas/encuestas-de-hogares/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/9fxl3w1m1sM6hFm/download",
+      "dynamic_scraped": true,
+      "original_filename": "3060105.xlsx",
+      "canonical_filename": "lineas_de_pobreza_monetaria_bs.xlsx",
+      "local_path": "data/raw/11_lineas_pobreza/lineas_de_pobreza_monetaria_bs.xlsx",
+      "file_size_bytes": 101236,
+      "file_size_kb": 98.86,
+      "downloaded_at": "2026-11-03T12:52:58.469745",
+      "excel_info": {
+        "sheet_count": 1,
+        "sheets": [
+          {
+            "name": "3.06.01.05",
+            "rows": 44,
+            "columns": 31
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "id": "12_salario_medio_nominal",
+      "name": "Salario Medio Nominal del Sector Privado",
+      "category": "Mercado Laboral y Salarios",
+      "frequency": "Trimestral / Anual",
+      "description": "Salario medio nominal de trabajadores asalariados del sector privado por grupo ocupacional (1996 - 2023).",
+      "source_page": "https://www.ine.gob.bo/index.php/estadisticas-economicas/salarios-renumeraciones-y-empleo-de-los-asalariados-en-el-sector-privado-cuadros-estadisticos/",
+      "download_url": "https://nube.ine.gob.bo/index.php/s/0cmGQNTrbSWRVxt/download",
+      "dynamic_scraped": true,
+      "original_filename": "Bolivia - Indice de Salario Medio Nominal del Sector Privado por Grupo Ocupacional, 1996 - 2023.xlsx",
+      "canonical_filename": "salario_medio_nominal_sector_privado.xlsx",
+      "local_path": "data/raw/12_salario_medio_nominal/salario_medio_nominal_sector_privado.xlsx",
+      "file_size_bytes": 2928426,
+      "file_size_kb": 2859.79,
+      "downloaded_at": "2026-11-03T12:53:02.966457",
+      "excel_info": {
+        "sheet_count": 3,
+        "sheets": [
+          {
+            "name": "INDICE-NOMINAL-OCUPACION",
+            "rows": 159,
+            "columns": 16304
+          },
+          {
+            "name": "Var a Periodo Anterior",
+            "rows": 158,
+            "columns": 16364
+          },
+          {
+            "name": "VarI  Similar Periodo Anterior",
+            "rows": 153,
+            "columns": 16381
+          }
+        ]
+      },
+      "status": "SUCCESS"
+    }
+  ]
+}
