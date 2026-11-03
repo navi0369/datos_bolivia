@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "uv pip install --system -r requirements.txt && python3 build.py",
+  "buildCommand": "uv run python build.py",
   "outputDirectory": "public",
   "framework": null,
   "headers": [
