@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Plataforma Jamstack estática de indicadores macroeconómicos y matrices limpias de Bolivia (INE)",
   "scripts": {
-    "build": "python3 build.py",
-    "validate": "python3 validate_data.py",
+    "build": "if [ -f .venv/bin/python ]; then .venv/bin/python build.py; else python3 build.py; fi",
+    "validate": "if [ -f .venv/bin/python ]; then .venv/bin/python validate_data.py; else python3 validate_data.py; fi",
     "test": "pytest validate_data.py"
   },
   "keywords": [
