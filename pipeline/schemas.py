@@ -12,7 +12,7 @@ def check_pib_values(df):
     invalid = df[(df["actividad_economica"] != "SERVICIOS BANCARIOS IMPUTADOS") & (df["pib_miles_bs_1990"] < 0)]
     return invalid.empty
 
-# 1. Esquema Balanza Comercial
+# 1. Esquema Balanza Comercial Mensual y Anual
 SCHEMA_BALANZA_COMERCIAL = DataFrameSchema(
     columns={
         "anio": Column(int, Check.between(1990, 2035), nullable=False),
@@ -22,6 +22,28 @@ SCHEMA_BALANZA_COMERCIAL = DataFrameSchema(
         "exportaciones_usd_millones": Column(float, Check.greater_than_or_equal_to(0.0), nullable=False),
         "importaciones_usd_millones": Column(float, Check.greater_than_or_equal_to(0.0), nullable=False),
         "saldo_comercial_usd_millones": Column(float, nullable=False),
+    },
+    strict=False,
+    coerce=True
+)
+
+SCHEMA_BALANZA_COMERCIAL_ANUAL = DataFrameSchema(
+    columns={
+        "anio": Column(int, Check.between(1990, 2035), nullable=False),
+        "exportaciones_usd_millones": Column(float, Check.greater_than_or_equal_to(0.0), nullable=False),
+        "importaciones_usd_millones": Column(float, Check.greater_than_or_equal_to(0.0), nullable=False),
+        "saldo_comercial_usd_millones": Column(float, nullable=False),
+    },
+    strict=False,
+    coerce=True
+)
+
+SCHEMA_INFLACION_ANUAL = DataFrameSchema(
+    columns={
+        "anio": Column(int, Check.between(1930, 2035), nullable=False),
+        "inflacion_anual_pct": Column(float, nullable=False),
+        "variacion_interanual_pct": Column(float, nullable=False),
+        "ipc_indice": Column(float, Check.greater_than_or_equal_to(0.0), nullable=False),
     },
     strict=False,
     coerce=True
@@ -117,6 +139,8 @@ SCHEMA_IGAE = DataFrameSchema(
 # Diccionario de esquemas mapeados por nombre de dataset
 DATASET_SCHEMAS = {
     "balanza_comercial": SCHEMA_BALANZA_COMERCIAL,
+    "balanza_comercial_anual": SCHEMA_BALANZA_COMERCIAL_ANUAL,
+    "inflacion_anual": SCHEMA_INFLACION_ANUAL,
     "inflacion_ipc": SCHEMA_INFLACION_IPC,
     "pib_anual": SCHEMA_PIB_ANUAL,
     "pib_trimestral": SCHEMA_PIB_TRIMESTRAL,

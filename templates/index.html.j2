@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Datos Bolivia | Matrices Económicas y Sociales Oficiales</title>
-  <meta name="description" content="Plataforma de datos limpios y matrices estadísticas oficiales de Bolivia (PIB, Inflación, Balanza Comercial, Empleo, Pobreza). Pre-compilada para 0s de latencia.">
+  <meta name="description" content="Plataforma de datos limpios y matrices estadísticas oficiales de Bolivia (PIB, Inflación, Balanza Comercial, Empleo, Pobreza). Pre-compilada para 0s de latencia en Vercel.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- Tabulator CSS -->
+  <!-- Tabulator CSS (Tema Midnight profesional) -->
   <link href="https://unpkg.com/tabulator-tables@5.6.1/dist/css/tabulator_midnight.min.css" rel="stylesheet">
   
   <!-- Estilos Custom -->
@@ -20,7 +20,7 @@
     <!-- Header Principal -->
     <header class="app-header">
       <div class="header-brand">
-        <div class="flag-icon">
+        <div class="flag-icon" title="Estado Plurinacional de Bolivia">
           <span class="stripe red"></span>
           <span class="stripe yellow"></span>
           <span class="stripe green"></span>
@@ -32,131 +32,132 @@
       </div>
 
       <div class="header-badges">
-        <div class="badge badge-static">
+        <div class="badge badge-static" title="Generado en compilación - Sin cold starts">
           <span class="status-dot green"></span>
           <span>Jamstack Estático (0s Cold Starts)</span>
         </div>
-        <div class="badge badge-audit">
+        <div class="badge badge-audit" title="Validado con Pandera y reglas lógicas">
           <span class="badge-icon">✓</span>
-          <span>Auditado con Pandera</span>
+          <span>Auditoría Pandera Superada</span>
         </div>
         <div class="badge badge-source">
-          <span>Fuente: INE Bolivia</span>
+          <span>Fuente Oficial: INE Bolivia</span>
         </div>
       </div>
     </header>
 
     <!-- Contenido Principal -->
     <main class="app-main">
-      <!-- Barra lateral de navegación de indicadores -->
+      <!-- Barra lateral de navegación organizada por secciones y frecuencias -->
       <aside class="sidebar">
         <div class="sidebar-header">
-          <h2>INDICADORES CLAVE</h2>
-          <span class="indicator-counter">{{ indicators | length }} Disponibles</span>
+          <div>
+            <h2>MATRICES OFICIALES</h2>
+            <p class="sidebar-caption">Orden: Anual → Trimestral → Mensual</p>
+          </div>
+          <span class="indicator-counter">{{ total_indicators }} Matrices</span>
         </div>
 
         <nav class="indicator-nav">
-          {% for ind in indicators %}
-          <button class="nav-btn {% if loop.first %}active{% endif %}" data-indicator-id="{{ ind.id }}">
-            <span class="nav-icon">{{ ind.icon }}</span>
-            <div class="nav-text">
-              <span class="nav-title">{{ ind.title }}</span>
-              <span class="nav-meta">{{ ind.category }} • {{ ind.frequency }}</span>
+          {% for category, items in grouped_indicators.items() %}
+          <div class="nav-section">
+            <div class="nav-section-title">
+              <span class="section-indicator-dot"></span>
+              <span>{{ category }}</span>
             </div>
-          </button>
+            <div class="nav-section-items">
+              {% for ind in items %}
+              <button class="nav-btn {% if ind.id == first_indicator_id %}active{% endif %}" data-indicator-id="{{ ind.id }}">
+                <div class="nav-btn-header">
+                  <span class="nav-icon">{{ ind.icon }}</span>
+                  <span class="nav-title">{{ ind.short_name }}</span>
+                </div>
+                <div class="nav-btn-meta">
+                  <span class="freq-tag freq-{{ ind.frequency | lower }}">{{ ind.frequency }}</span>
+                  <span class="nav-years">{{ ind.min_year }} - {{ ind.max_year }}</span>
+                </div>
+              </button>
+              {% endfor %}
+            </div>
+          </div>
           {% endfor %}
         </nav>
 
         <div class="sidebar-footer">
           <p class="footer-note">Compilación Estática: <strong>{{ build_timestamp }}</strong></p>
-          <p class="footer-meta">100% Client-side • Vercel Free Tier</p>
+          <p class="footer-meta">100% Client-Side • Vercel Free Tier (Sin Servidor Python)</p>
         </div>
       </aside>
 
-      <!-- Panel de Contenido Activo -->
+      <!-- Panel de Contenido Activo: Ficha de Fuente + Tabla Tabulator -->
       <section class="content-panel">
-        <!-- Encabezado del Indicador Activo -->
-        <div class="panel-header">
-          <div class="title-wrap">
-            <div class="cat-pill" id="ind-category">Categoría</div>
-            <h2 id="ind-title" class="ind-main-title">Cargando indicador...</h2>
-            <p id="ind-description" class="ind-desc">Descripción detallada del indicador.</p>
+        
+        <!-- Tarjeta de Ficha Técnica y Fuente Exacta del INE -->
+        <div class="source-card">
+          <div class="source-card-header">
+            <div class="source-title-wrap">
+              <div class="meta-tag-row">
+                <span id="src-category-pill" class="pill pill-category">Categoría</span>
+                <span id="src-frequency-pill" class="pill pill-freq">Frecuencia</span>
+                <span class="pill pill-institution">🏛️ INE Bolivia (Oficial)</span>
+              </div>
+              <h2 id="ind-title" class="ind-main-title">Cargando indicador...</h2>
+              <p id="ind-description" class="ind-desc">Descripción técnica de la matriz estadística.</p>
+            </div>
+
+            <!-- Botones de Enlace Oficial Directo y Descarga -->
+            <div class="source-actions">
+              <a id="btn-src-page" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-source" title="Abrir página oficial de publicación en el portal del INE">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Página Oficial INE
+              </a>
+              <a id="btn-src-download" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-source-dl" title="Descargar archivo Excel original desde la nube del INE">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Excel Original INE
+              </a>
+            </div>
           </div>
-          <div class="header-actions">
-            <button id="btn-export-csv" class="btn btn-secondary">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Exportar CSV
-            </button>
-            <button id="btn-export-xlsx" class="btn btn-primary">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
-              Exportar Excel
-            </button>
+
+          <!-- Grilla de Procedencia Exacta de los Datos -->
+          <div class="source-details-grid">
+            <div class="source-field">
+              <span class="field-label">CUADRO OFICIAL INE</span>
+              <span id="src-table-name" class="field-value">--</span>
+            </div>
+
+            <div class="source-field">
+              <span class="field-label">ARCHIVO FUENTE SERVIDOR</span>
+              <span id="src-file-name" class="field-value font-mono">--</span>
+            </div>
+
+            <div class="source-field">
+              <span class="field-label">METODOLOGÍA / AÑO BASE</span>
+              <span id="src-methodology" class="field-value">--</span>
+            </div>
+
+            <div class="source-field">
+              <span class="field-label">COBERTURA & REGISTROS</span>
+              <span id="src-coverage" class="field-value">--</span>
+            </div>
+
+            <div class="source-field">
+              <span class="field-label">UNIDAD DE MEDIDA</span>
+              <span id="src-unit" class="field-value">--</span>
+            </div>
+
+            <div class="source-field">
+              <span class="field-label">ESTADO DE AUDITORÍA QA</span>
+              <span class="field-value text-green">✓ Validado con Pandera (Exit 0)</span>
+            </div>
           </div>
         </div>
 
-        <!-- Tarjetas de Métricas Rápidas (KPIs) -->
-        <div class="kpi-grid">
-          <div class="kpi-card">
-            <span class="kpi-label">ÚLTIMO REGISTRO</span>
-            <div class="kpi-value-wrap">
-              <span id="kpi-latest-val" class="kpi-value">--</span>
-              <span id="kpi-latest-unit" class="kpi-unit"></span>
-            </div>
-            <span id="kpi-latest-date" class="kpi-sub">Período: --</span>
-          </div>
-
-          <div class="kpi-card">
-            <span class="kpi-label">MÁXIMO HISTÓRICO</span>
-            <div class="kpi-value-wrap">
-              <span id="kpi-max-val" class="kpi-value">--</span>
-              <span id="kpi-max-unit" class="kpi-unit"></span>
-            </div>
-            <span id="kpi-max-date" class="kpi-sub">Período: --</span>
-          </div>
-
-          <div class="kpi-card">
-            <span class="kpi-label">MÍNIMO HISTÓRICO</span>
-            <div class="kpi-value-wrap">
-              <span id="kpi-min-val" class="kpi-value">--</span>
-              <span id="kpi-min-unit" class="kpi-unit"></span>
-            </div>
-            <span id="kpi-min-date" class="kpi-sub">Período: --</span>
-          </div>
-
-          <div class="kpi-card">
-            <span class="kpi-label">COBERTURA DE DATOS</span>
-            <div class="kpi-value-wrap">
-              <span id="kpi-total-rows" class="kpi-value">--</span>
-              <span class="kpi-unit">filas</span>
-            </div>
-            <span id="kpi-range-years" class="kpi-sub">Rango: --</span>
-          </div>
-        </div>
-
-        <!-- Visualización Gráfica Interactiva -->
-        <div class="chart-container-card">
-          <div class="chart-header">
-            <div class="chart-title-group">
-              <h3>Evolución Histórica</h3>
-              <span id="chart-subtitle" class="chart-sub">Serie temporal completa</span>
-            </div>
-            <div class="chart-controls">
-              <button class="pill-btn active" data-range="all">Todo</button>
-              <button class="pill-btn" data-range="10y">Últimos 10 Años</button>
-              <button class="pill-btn" data-range="5y">Últimos 5 Años</button>
-            </div>
-          </div>
-          <div class="chart-canvas-wrap">
-            <canvas id="timeSeriesChart"></canvas>
-          </div>
-        </div>
-
-        <!-- Barra de Herramientas y Filtros de la Tabla -->
+        <!-- Barra de Herramientas, Filtros Rápidos y Exportación de la Tabla -->
         <div class="table-toolbar">
           <div class="filter-group">
             <div class="search-box">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="text" id="table-search" placeholder="Buscar en todas las columnas...">
+              <input type="text" id="table-search" placeholder="Filtrar en toda la matriz...">
             </div>
 
             <div class="select-box">
@@ -174,26 +175,38 @@
             </div>
           </div>
 
-          <div class="table-meta-counter">
-            <span id="table-row-count">0 registros encontrados</span>
+          <div class="toolbar-right">
+            <div class="table-meta-counter">
+              <span id="table-row-count">0 registros cargados</span>
+            </div>
+
+            <div class="export-actions">
+              <button id="btn-export-csv" class="btn btn-export-csv" title="Descargar matriz en formato CSV limpio">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                CSV
+              </button>
+              <button id="btn-export-xlsx" class="btn btn-export-xlsx" title="Descargar matriz en formato Excel (.xlsx) limpio">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+                Excel (.xlsx)
+              </button>
+            </div>
           </div>
         </div>
 
-        <!-- Contenedor Tabulator -->
+        <!-- Contenedor Tabulator (Matriz Limpia y Estructurada) -->
         <div class="table-card">
           <div id="data-table"></div>
         </div>
+
       </section>
     </main>
   </div>
 
-  <!-- SheetJS para exportar a Excel client-side -->
+  <!-- SheetJS para descarga nativa de Excel (.xlsx) en el cliente -->
   <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
-  <!-- Chart.js para visualización interactiva -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <!-- Tabulator JS -->
   <script src="https://unpkg.com/tabulator-tables@5.6.1/dist/js/tabulator.min.js"></script>
-  <!-- App JS -->
+  <!-- Lógica de la Aplicación -->
   <script src="app.js"></script>
 </body>
 </html>

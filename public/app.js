@@ -1,22 +1,20 @@
 /**
- * Aplicación cliente de visualización y exploración de datos INE Bolivia.
- * 100% Client-side: Tabulator + Chart.js + SheetJS.
+ * Aplicación cliente de visualización y exploración de datos del INE Bolivia.
+ * 100% Client-side: Tabulator + SheetJS (Sin Chart.js, sin gráficos, solo matrices limpias).
  */
 
 let manifest = null;
 let activeIndicatorId = null;
 let currentData = [];
 let tableInstance = null;
-let chartInstance = null;
-let chartRangeFilter = "all";
 
-// Inicialización de la aplicación
+// Inicialización cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", async () => {
   await loadManifest();
   setupEventListeners();
 });
 
-// Cargar catálogo de indicadores pre-compilado
+// Cargar catálogo de indicadores pre-compilado en manifest.json
 async function loadManifest() {
   try {
     const res = await fetch("data/manifest.json");
@@ -25,15 +23,19 @@ async function loadManifest() {
 
     // Seleccionar primer indicador disponible por defecto
     const firstInd = Object.keys(manifest.indicators)[0];
-    switchIndicator(firstInd);
+    if (firstInd) {
+      switchIndicator(firstInd);
+    }
   } catch (err) {
     console.error("Error al inicializar la aplicación:", err);
-    document.getElementById("ind-title").innerText = "Error cargando datos";
-    document.getElementById("ind-description").innerText = err.message;
+    const titleEl = document.getElementById("ind-title");
+    const descEl = document.getElementById("ind-description");
+    if (titleEl) titleEl.innerText = "Error cargando datos";
+    if (descEl) descEl.innerText = err.message;
   }
 }
 
-// Configurar escuchadores de eventos del DOM
+// Configurar escuchadores de eventos
 function setupEventListeners() {
   // Navegación lateral de indicadores
   document.querySelectorAll(".nav-btn").forEach(btn => {
@@ -45,90 +47,116 @@ function setupEventListeners() {
     });
   });
 
-  // Filtro de búsqueda general
+  // Filtro de búsqueda en tiempo real
   const searchInput = document.getElementById("table-search");
-  searchInput.addEventListener("input", (e) => {
-    const query = e.target.value.toLowerCase().trim();
-    if (!tableInstance) return;
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      if (!tableInstance) return;
 
-    if (!query) {
-      applyFilters();
-    } else {
-      tableInstance.setFilter((data) => {
-        return Object.values(data).some(val => 
-          val !== null && val !== undefined && String(val).toLowerCase().includes(query)
-        );
-      });
-      updateRowCount();
-    }
-  });
+      if (!query) {
+        applyFilters();
+      } else {
+        tableInstance.setFilter((data) => {
+          return Object.values(data).some(val => 
+            val !== null && val !== undefined && String(val).toLowerCase().includes(query)
+          );
+        });
+        updateRowCount();
+      }
+    });
+  }
 
-  // Filtro de año
+  // Filtro desplegable por Año
   const yearSelect = document.getElementById("filter-year");
-  yearSelect.addEventListener("change", applyFilters);
+  if (yearSelect) {
+    yearSelect.addEventListener("change", applyFilters);
+  }
 
-  // Filtro de variable secundaria
+  // Filtro desplegable por Variable secundaria
   const varSelect = document.getElementById("filter-variable");
-  varSelect.addEventListener("change", applyFilters);
+  if (varSelect) {
+    varSelect.addEventListener("change", applyFilters);
+  }
 
   // Botón Exportar CSV
-  document.getElementById("btn-export-csv").addEventListener("click", () => {
-    if (!tableInstance) return;
-    tableInstance.download("csv", `${activeIndicatorId}_ine_bolivia.csv`);
-  });
-
-  // Botón Exportar Excel
-  document.getElementById("btn-export-xlsx").addEventListener("click", () => {
-    if (!tableInstance) return;
-    tableInstance.download("xlsx", `${activeIndicatorId}_ine_bolivia.xlsx`, {
-      sheetName: "Datos INE Bolivia"
+  const btnCsv = document.getElementById("btn-export-csv");
+  if (btnCsv) {
+    btnCsv.addEventListener("click", () => {
+      if (!tableInstance) return;
+      tableInstance.download("csv", `${activeIndicatorId}_ine_bolivia.csv`);
     });
-  });
+  }
 
-  // Filtros de rango del gráfico
-  document.querySelectorAll(".chart-controls .pill-btn").forEach(pill => {
-    pill.addEventListener("click", () => {
-      document.querySelectorAll(".chart-controls .pill-btn").forEach(p => p.classList.remove("active"));
-      pill.classList.add("active");
-      chartRangeFilter = pill.getAttribute("data-range");
-      renderChart();
+  // Botón Exportar Excel (.xlsx)
+  const btnXlsx = document.getElementById("btn-export-xlsx");
+  if (btnXlsx) {
+    btnXlsx.addEventListener("click", () => {
+      if (!tableInstance) return;
+      tableInstance.download("xlsx", `${activeIndicatorId}_ine_bolivia.xlsx`, {
+        sheetName: "Datos INE Bolivia"
+      });
     });
-  });
+  }
 }
 
-// Cambiar de indicador activo
+// Cambiar matriz/indicador activo
 async function switchIndicator(indId) {
   activeIndicatorId = indId;
   const meta = manifest.indicators[indId];
   if (!meta) return;
 
-  // Actualizar clases activas en sidebar
+  // Actualizar estado activo en la barra lateral
   document.querySelectorAll(".nav-btn").forEach(btn => {
     btn.classList.toggle("active", btn.getAttribute("data-indicator-id") === indId);
   });
 
-  // Actualizar títulos y descripciones
-  document.getElementById("ind-category").innerText = meta.category;
+  // 1. Actualizar Ficha Técnica y Fuente Exacta
   document.getElementById("ind-title").innerText = meta.title;
   document.getElementById("ind-description").innerText = meta.description;
 
-  // Actualizar Tarjetas KPI
-  document.getElementById("kpi-latest-val").innerText = meta.kpis.latest_val_formatted || "--";
-  document.getElementById("kpi-latest-unit").innerText = meta.unit || "";
-  document.getElementById("kpi-latest-date").innerText = `Período: ${meta.kpis.latest_date || "--"}`;
+  const catPill = document.getElementById("src-category-pill");
+  if (catPill) catPill.innerText = meta.category;
 
-  document.getElementById("kpi-max-val").innerText = meta.kpis.max_val_formatted || "--";
-  document.getElementById("kpi-max-unit").innerText = meta.unit || "";
-  document.getElementById("kpi-max-date").innerText = `Período: ${meta.kpis.max_date || "--"}`;
+  const freqPill = document.getElementById("src-frequency-pill");
+  if (freqPill) {
+    freqPill.innerText = meta.frequency.toUpperCase();
+    freqPill.className = `pill pill-freq freq-${meta.frequency.toLowerCase()}`;
+  }
 
-  document.getElementById("kpi-min-val").innerText = meta.kpis.min_val_formatted || "--";
-  document.getElementById("kpi-min-unit").innerText = meta.unit || "";
-  document.getElementById("kpi-min-date").innerText = `Período: ${meta.kpis.min_date || "--"}`;
+  // Enlaces oficiales directos
+  const pageLink = document.getElementById("btn-src-page");
+  if (pageLink) {
+    pageLink.href = meta.source_page || "#";
+    pageLink.target = "_blank";
+  }
 
-  document.getElementById("kpi-total-rows").innerText = meta.kpis.total_records.toLocaleString();
-  document.getElementById("kpi-range-years").innerText = `Rango: ${meta.min_year} - ${meta.max_year}`;
+  const dlLink = document.getElementById("btn-src-download");
+  if (dlLink) {
+    dlLink.href = meta.direct_url || "#";
+    dlLink.target = "_blank";
+  }
 
-  // Cargar el JSON estático pre-compilado
+  // Campos de detalle de la fuente
+  const tableNameEl = document.getElementById("src-table-name");
+  if (tableNameEl) tableNameEl.innerText = meta.official_table || meta.title;
+
+  const fileNameEl = document.getElementById("src-file-name");
+  if (fileNameEl) fileNameEl.innerText = meta.source_filename || "--";
+
+  const methEl = document.getElementById("src-methodology");
+  if (methEl) methEl.innerText = meta.methodology || "--";
+
+  const covEl = document.getElementById("src-coverage");
+  if (covEl) {
+    const totalRecs = meta.total_records ? meta.total_records.toLocaleString("es-BO") : "--";
+    covEl.innerText = `${meta.min_year} - ${meta.max_year} (${totalRecs} registros)`;
+  }
+
+  const unitEl = document.getElementById("src-unit");
+  if (unitEl) unitEl.innerText = meta.unit || "--";
+
+  // 2. Cargar datos del JSON estático compilado
   try {
     const res = await fetch(`data/${indId}.json`);
     if (!res.ok) throw new Error(`No se pudo cargar el archivo data/${indId}.json`);
@@ -136,33 +164,35 @@ async function switchIndicator(indId) {
 
     populateFilterDropdowns(meta);
     renderTable(meta);
-    renderChart();
   } catch (err) {
-    console.error("Error al cargar datos del indicador:", err);
+    console.error("Error al cargar la matriz de datos:", err);
   }
 }
 
-// Llenar listas desplegables de filtros
+// Llenar selectores de filtro con los datos actuales
 function populateFilterDropdowns(meta) {
+  // Filtro de Año
   const yearSelect = document.getElementById("filter-year");
-  yearSelect.innerHTML = '<option value="">Todos los años</option>';
-  const years = [...new Set(currentData.map(d => d.anio))].sort((a, b) => b - a);
-  years.forEach(y => {
-    const opt = document.createElement("option");
-    opt.value = y;
-    opt.textContent = y;
-    yearSelect.appendChild(opt);
-  });
+  if (yearSelect) {
+    yearSelect.innerHTML = '<option value="">Todos los años</option>';
+    const years = [...new Set(currentData.map(d => d.anio))].filter(Boolean).sort((a, b) => b - a);
+    years.forEach(y => {
+      const opt = document.createElement("option");
+      opt.value = y;
+      opt.textContent = y;
+      yearSelect.appendChild(opt);
+    });
+  }
 
-  // Filtro de variable secundaria (ej. departamento o actividad)
+  // Filtro de variable secundaria (e.g. actividad_economica, departamento, etc.)
   const varContainer = document.getElementById("variable-filter-container");
   const varSelect = document.getElementById("filter-variable");
   const varKey = meta.category_column;
 
   if (varKey && currentData.length > 0 && currentData[0][varKey] !== undefined) {
     varContainer.style.display = "flex";
-    varSelect.innerHTML = '<option value="">Todas las variables</option>';
-    const distinctVars = [...new Set(currentData.map(d => d[varKey]))].sort();
+    varSelect.innerHTML = '<option value="">Todas</option>';
+    const distinctVars = [...new Set(currentData.map(d => d[varKey]))].filter(Boolean).sort();
     distinctVars.forEach(v => {
       const opt = document.createElement("option");
       opt.value = v;
@@ -173,10 +203,11 @@ function populateFilterDropdowns(meta) {
     varContainer.style.display = "none";
   }
 
-  document.getElementById("table-search").value = "";
+  const searchInput = document.getElementById("table-search");
+  if (searchInput) searchInput.value = "";
 }
 
-// Aplicar filtros combinados
+// Aplicar filtros combinados (año y variable secundaria)
 function applyFilters() {
   if (!tableInstance) return;
 
@@ -197,17 +228,20 @@ function applyFilters() {
   updateRowCount();
 }
 
-// Actualizar contador de filas filtradas
+// Actualizar el contador de filas filtradas/activas
 function updateRowCount() {
   setTimeout(() => {
     if (tableInstance) {
       const count = tableInstance.getDataCount("active");
-      document.getElementById("table-row-count").innerText = `${count.toLocaleString()} registros encontrados`;
+      const el = document.getElementById("table-row-count");
+      if (el) {
+        el.innerText = `${count.toLocaleString("es-BO")} registros encontrados`;
+      }
     }
-  }, 100);
+  }, 50);
 }
 
-// Construir e instanciar la tabla con Tabulator
+// Renderizar la tabla con Tabulator
 function renderTable(meta) {
   const columns = meta.columns.map(col => {
     const isNum = col.type === "number" || col.type === "float" || col.type === "int";
@@ -216,11 +250,17 @@ function renderTable(meta) {
       field: col.field,
       sorter: isNum ? "number" : "string",
       hozAlign: isNum ? "right" : "left",
+      headerHozAlign: isNum ? "right" : "left",
       formatter: isNum ? (cell) => {
         const val = cell.getValue();
-        if (val === null || val === undefined) return "-";
-        return Number(val).toLocaleString("es-BO", { maximumFractionDigits: 2 });
-      } : undefined
+        if (val === null || val === undefined) return '<span class="text-muted">-</span>';
+        // Formatear decimales si no es entero
+        const maxDec = col.type === "int" ? 0 : 2;
+        return `<span class="font-mono">${Number(val).toLocaleString("es-BO", { maximumFractionDigits: maxDec, minimumFractionDigits: col.type === "int" ? 0 : 2 })}</span>`;
+      } : (cell) => {
+        const val = cell.getValue();
+        return val ? String(val) : '<span class="text-muted">-</span>';
+      }
     };
   });
 
@@ -230,10 +270,10 @@ function renderTable(meta) {
     layout: "fitColumns",
     responsiveLayout: "collapse",
     pagination: "local",
-    paginationSize: 20,
-    paginationSizeSelector: [15, 20, 50, 100],
+    paginationSize: 25,
+    paginationSizeSelector: [15, 25, 50, 100, 500],
     movableColumns: true,
-    placeholder: "No se encontraron datos disponibles",
+    placeholder: "No se encontraron registros para los filtros seleccionados",
   });
 
   tableInstance.on("tableBuilt", () => {
@@ -241,109 +281,5 @@ function renderTable(meta) {
   });
   tableInstance.on("dataFiltered", () => {
     updateRowCount();
-  });
-}
-
-// Renderizar o actualizar el gráfico Chart.js
-function renderChart() {
-  const meta = manifest.indicators[activeIndicatorId];
-  if (!meta || !meta.primary_metric) return;
-
-  const ctx = document.getElementById("timeSeriesChart").getContext("2d");
-  const metricCol = meta.primary_metric;
-
-  // Filtrar según el rango de tiempo seleccionado
-  let filteredData = [...currentData];
-  const currentMaxYear = Math.max(...currentData.map(d => d.anio));
-
-  if (chartRangeFilter === "10y") {
-    filteredData = filteredData.filter(d => d.anio >= currentMaxYear - 10);
-  } else if (chartRangeFilter === "5y") {
-    filteredData = filteredData.filter(d => d.anio >= currentMaxYear - 5);
-  }
-
-  // Si hay categorías (e.g. departamentos), filtrar para el gráfico por Bolivia o agregado
-  if (meta.category_column) {
-    const catCol = meta.category_column;
-    const hasBolivia = filteredData.some(d => String(d[catCol]).toUpperCase().includes("BOLIVIA"));
-    if (hasBolivia) {
-      filteredData = filteredData.filter(d => String(d[catCol]).toUpperCase().includes("BOLIVIA"));
-    }
-  }
-
-  // Ordenar cronológicamente
-  filteredData.sort((a, b) => {
-    if (a.anio !== b.anio) return a.anio - b.anio;
-    return (a.mes_num || 0) - (b.mes_num || 0);
-  });
-
-  const labels = filteredData.map(d => d.periodo || String(d.anio));
-  const values = filteredData.map(d => d[metricCol]);
-
-  if (chartInstance) {
-    chartInstance.destroy();
-  }
-
-  const isBalanza = metricCol === "saldo_comercial_usd_millones";
-  const bgColors = values.map(v => isBalanza ? (v >= 0 ? "rgba(16, 185, 129, 0.4)" : "rgba(239, 68, 68, 0.4)") : "rgba(16, 185, 129, 0.2)");
-  const borderColors = values.map(v => isBalanza ? (v >= 0 ? "#10b981" : "#ef4444") : "#10b981");
-
-  document.getElementById("chart-subtitle").innerText = `${meta.title} (${labels[0] || ""} a ${labels[labels.length - 1] || ""})`;
-
-  chartInstance = new Chart(ctx, {
-    type: isBalanza ? "bar" : "line",
-    data: {
-      labels: labels,
-      datasets: [{
-        label: meta.primary_metric_label || meta.title,
-        data: values,
-        borderColor: isBalanza ? borderColors : "#10b981",
-        backgroundColor: bgColors,
-        borderWidth: 2,
-        pointRadius: labels.length > 80 ? 0 : 2,
-        pointHoverRadius: 5,
-        fill: !isBalanza,
-        tension: 0.25
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: {
-        mode: "index",
-        intersect: false
-      },
-      plugins: {
-        legend: {
-          display: true,
-          labels: { color: "#9ca3af", font: { family: "Inter", size: 12 } }
-        },
-        tooltip: {
-          backgroundColor: "#1f2937",
-          titleColor: "#f9fafb",
-          bodyColor: "#10b981",
-          borderColor: "#374151",
-          borderWidth: 1,
-          padding: 10,
-          callbacks: {
-            label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString("es-BO")} ${meta.unit || ""}`
-          }
-        }
-      },
-      scales: {
-        x: {
-          grid: { color: "rgba(255, 255, 255, 0.05)" },
-          ticks: { color: "#6b7280", maxTicksLimit: 12, font: { family: "Inter", size: 11 } }
-        },
-        y: {
-          grid: { color: "rgba(255, 255, 255, 0.05)" },
-          ticks: {
-            color: "#6b7280",
-            font: { family: "JetBrains Mono", size: 11 },
-            callback: (val) => `${Number(val).toLocaleString("es-BO")} ${meta.unit_short || ""}`
-          }
-        }
-      }
-    }
   });
 }

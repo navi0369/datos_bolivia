@@ -62,6 +62,20 @@ def clean_balanza_comercial() -> pd.DataFrame:
     return df
 
 
+def clean_balanza_comercial_anual() -> pd.DataFrame:
+    """Procesa el saldo de comercio exterior anual (1992-2023) consolidado por año."""
+    df_m = clean_balanza_comercial()
+    grp = df_m.groupby("anio").agg({
+        "exportaciones_usd_millones": "sum",
+        "importaciones_usd_millones": "sum"
+    }).reset_index()
+
+    grp["exportaciones_usd_millones"] = grp["exportaciones_usd_millones"].round(2)
+    grp["importaciones_usd_millones"] = grp["importaciones_usd_millones"].round(2)
+    grp["saldo_comercial_usd_millones"] = (grp["exportaciones_usd_millones"] - grp["importaciones_usd_millones"]).round(2)
+    return grp.sort_values("anio").reset_index(drop=True)
+
+
 def clean_inflacion_ipc() -> pd.DataFrame:
     """Procesa la serie empalmada del IPC e Inflación mensual, acumulada y a 12 meses (1937-2026)."""
     path = RAW_DIR / "03_inflacion_ipc/ipc_nacional_variacion_acumulada_mensual.xlsx"
@@ -93,6 +107,18 @@ def clean_inflacion_ipc() -> pd.DataFrame:
     merged = merged.sort_values(['anio', 'mes_num']).reset_index(drop=True)
     merged['periodo'] = merged['anio'].astype(str) + '-' + merged['mes_num'].astype(str).str.zfill(2)
     return merged
+
+
+def clean_inflacion_anual() -> pd.DataFrame:
+    """Procesa la serie histórica oficial de inflación anual acumulada al mes de diciembre (1937-2025)."""
+    df = clean_inflacion_ipc()
+    dic = df[df["mes"] == "Diciembre"].copy()
+    dic = dic[["anio", "inflacion_acumulada_pct", "inflacion_12_meses_pct", "ipc_indice"]].dropna(subset=["inflacion_acumulada_pct"])
+    dic = dic.rename(columns={
+        "inflacion_acumulada_pct": "inflacion_anual_pct",
+        "inflacion_12_meses_pct": "variacion_interanual_pct"
+    })
+    return dic.sort_values("anio").reset_index(drop=True)
 
 
 def clean_pib_anual() -> pd.DataFrame:
@@ -390,15 +416,24 @@ def clean_salario_medio() -> pd.DataFrame:
 def load_all_clean_datasets() -> Dict[str, pd.DataFrame]:
     """Carga y limpia todos los datasets disponibles en un diccionario unificado."""
     return {
-        "balanza_comercial": clean_balanza_comercial(),
-        "inflacion_ipc": clean_inflacion_ipc(),
+        # Sección 1: Cuentas Nacionales & Actividad Económica (Anual -> Trimestral -> Mensual)
         "pib_anual": clean_pib_anual(),
         "pib_trimestral": clean_pib_trimestral(),
-        "tasa_desocupacion": clean_tasa_desocupacion(),
-        "pobreza_departamental": clean_pobreza_departamental(),
         "igae": clean_igae(),
+
+        # Sección 2: Sector Externo & Comercio (Anual -> Mensual)
+        "balanza_comercial_anual": clean_balanza_comercial_anual(),
         "exportaciones": clean_exportaciones(),
+        "balanza_comercial": clean_balanza_comercial(),
         "importaciones": clean_importaciones(),
+
+        # Sección 3: Precios e Inflación (Anual -> Mensual)
+        "inflacion_anual": clean_inflacion_anual(),
+        "inflacion_ipc": clean_inflacion_ipc(),
+
+        # Sección 4: Pobreza, Empleo y Condiciones Sociales (Anual -> Mensual)
+        "pobreza_departamental": clean_pobreza_departamental(),
         "lineas_pobreza": clean_lineas_pobreza(),
-        "salario_medio_nominal": clean_salario_medio()
+        "salario_medio_nominal": clean_salario_medio(),
+        "tasa_desocupacion": clean_tasa_desocupacion()
     }
